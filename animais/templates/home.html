@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Adoção de animais</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.google.com/specimen/Fredoka?utm_source=chatgpt.com" rel="stylesheet">
+
+</head>
+
+
+<body>
+    
+    <main class="conteudo">
+        <!-- Cabeçalho da página -->
+        <h1 class="titulo-site">
+            ADOÇÃO DE ANIMAIS
+        </h1>
+        <h2 class="subtitulo-site">
+            Neste site você fica por dentro dos bichanos que estão sendo doados na região. 
+        </h2>
+
+        <section class="boas-vindas">
+            <img src="https://cdn.pixabay.com/photo/2021/10/13/09/01/corgi-6705821_1280.jpg" alt="Ícone de boas-vindas"> 
+        </section>
+
+        <p class="descricao-site">
+            A adoção de animais é um ato de amor e responsabilidade que pode transformar a vida de um ser indefeso. 
+            Ao adotar um animal, você não apenas oferece um lar seguro e amoroso para um companheiro peludo, mas também contribui para a redução do abandono e do sofrimento animal. 
+            Além disso, a adoção promove a conscientização sobre a importância do cuidado responsável e do respeito aos direitos dos animais. 
+            Ao escolher adotar, você está fazendo uma escolha ética e solidária, ajudando a criar um mundo mais compassivo para todos os seres vivos.
+        </p>
+
+        <h3 class="titulo-cards">
+            Conheça os animais disponíveis para adoção:
+        </h3>
+
+        <!-- Cards dos animais -->  
+
+        <div class="container">
+
+            {% for animal in animais %}
+
+            <div class="card">
+
+                <img src="{{ animal.foto.url }}" alt="{{ animal.nome }}">
+                
+                <h3>{{ animal.nome }}</h3>
+
+                <p>Espécie: {{ animal.especie }}</p>
+
+                <p>Idade: {{ animal.idade }} {{ animal.get_unidade_idade_display|lower }} {{animal.get_selecione_display}}</p> 
+
+                <p>Sexo: {{ animal.get_sexo_display }}</p>
+
+                <a href="/adotar">
+                    <button class="adopt-btn">Adotar</button>
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+     
+    </main>
+
+ <!-- SIDEBAR-->
+    
+  <aside class="sidebar">
+        <nav class="menu">
+            <a href="/home" class="active">
+                Pagina Inicial
+            </a>
+            
+            <a href="/formulario">
+                Preencher formulário
+            </a>
+            
+            <a href="/contato">
+                Contato
+            </a>
+        </nav>
+    </aside>
+   
+   <script src="home.js"></script>
+
+
+</body>
+</html>
