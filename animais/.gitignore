@@ -1,0 +1,15 @@
+# Ambiente virtual
+venv/
+
+# Banco de dados SQLite
+db.sqlite3
+
+# Arquivos Python temporários
+__pycache__/
+*.py[cod]
+
+# Configurações do sistema
+.vscode/
+
+# Arquivos de mídia enviados pelos usuários
+media/

@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animais disponíveis</title>
+
+    <link rel="stylesheet" href="{% static 'adopt.css' %}">
+
+</head>
+
+<body>
+
+    <main class="conteudo">
+
+        <h1 class="titulo-site">
+            ANIMAIS QUE PRECISAM DE UM LAR
+        </h1>
+
+        <div class="container">
+
+            {% for animal in animais %}
+
+                <div class="card">
+
+                    <img src="{{ animal.foto.url }}" alt="{{ animal.nome }}">
+
+                    <h3>{{ animal.nome }}</h3>
+
+                    <p>Espécie: {{ animal.especie }}</p>
+
+                    <p>
+                        Idade:
+                        {{ animal.idade }}
+                        {{ animal.get_unidade_idade_display|lower }}
+                        {{ animal.get_selecione_display }}
+                    </p>
+
+                    <p>Sexo: {{ animal.get_sexo_display }}</p>
+
+                    <a href="/adotar">
+                        <button class="adopt-btn">Adotar</button>
+                    </a>
+
+                </div>
+
+            {% empty %}
+
+                <p class="sem-animais">
+                    No momento, não há animais disponíveis para adoção.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <nav class="menu">
+
+            <a href="/home">
+                Página Inicial
+            </a>
+
+             <a href="/AnimaisDisp" class="active">
+                Animais para adoção
+            </a>
+
+            <a href="/formulario">
+                Preencher formulário
+            </a>
+
+            <a href="/contato">
+                Sobre Nós
+            </a>
+
+        </nav>
+
+    </aside>
+
+</body>
+
+</html>

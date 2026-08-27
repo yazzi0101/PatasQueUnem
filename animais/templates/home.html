@@ -23,10 +23,10 @@
     <main class="conteudo">
         <!-- Cabeçalho da página -->
         <h1 class="titulo-site">
-            ADOÇÃO DE ANIMAIS
+            Patas Que Unem
         </h1>
         <h2 class="subtitulo-site">
-            Neste site você fica por dentro dos bichanos que estão sendo doados na região. 
+            Conectando animais a novos lares. Encontre. Adote. Ame.
         </h2>
 
         <section class="boas-vindas">
@@ -40,37 +40,12 @@
             Ao escolher adotar, você está fazendo uma escolha ética e solidária, ajudando a criar um mundo mais compassivo para todos os seres vivos.
         </p>
 
-        <h3 class="titulo-cards">
-            Conheça os animais disponíveis para adoção:
-        </h3>
-
-        <!-- Cards dos animais -->  
-
-        <div class="container">
-
-            {% for animal in animais %}
-
-            <div class="card">
-
-                <img src="{{ animal.foto.url }}" alt="{{ animal.nome }}">
-                
-                <h3>{{ animal.nome }}</h3>
-
-                <p>Espécie: {{ animal.especie }}</p>
-
-                <p>Idade: {{ animal.idade }} {{ animal.get_unidade_idade_display|lower }} {{animal.get_selecione_display}}</p> 
-
-                <p>Sexo: {{ animal.get_sexo_display }}</p>
-
-                <a href="/adotar">
-                    <button class="adopt-btn">Adotar</button>
-                </a>
-
-            </div>
-
-            {% endfor %}
-
+        <div class="area-animais">
+            <a href="/animais/" class="btn-animais">
+                Ver animais disponíveis
+            </a>
         </div>
+
      
     </main>
 
@@ -81,13 +56,17 @@
             <a href="/home" class="active">
                 Pagina Inicial
             </a>
+
+            <a href="/AnimaisDisp">
+                Animais para adoção
+            </a>
             
             <a href="/formulario">
                 Preencher formulário
             </a>
             
             <a href="/contato">
-                Contato
+                Sobre Nós
             </a>
         </nav>
     </aside>
