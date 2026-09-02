@@ -67,16 +67,16 @@
 
         <nav class="menu">
 
-            <a href="/home">
+            <a href="{% url 'home' %}">
                 Página Inicial
             </a>
 
-             <a href="/AnimaisDisp" class="active">
+             <a href="{% url 'animais_disponiveis' %}" class="active">
                 Animais para adoção
             </a>
 
-            <a href="/formulario">
-                Preencher formulário
+            <a href="{% url 'colocar_adocao'%}">
+                Cadastrar animal
             </a>
 
             <a href="/contato">

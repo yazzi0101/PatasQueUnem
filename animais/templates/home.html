@@ -41,7 +41,7 @@
         </p>
 
         <div class="area-animais">
-            <a href="/animais/" class="btn-animais">
+            <a href="{% url 'animais_disponiveis' %}" class="btn-animais">
                 Ver animais disponíveis
             </a>
         </div>
@@ -53,16 +53,16 @@
     
   <aside class="sidebar">
         <nav class="menu">
-            <a href="/home" class="active">
+            <a href="{% url 'home' %}" class="active">
                 Pagina Inicial
             </a>
 
-            <a href="/AnimaisDisp">
+            <a href="{% url 'animais_disponiveis' %}">
                 Animais para adoção
             </a>
             
-            <a href="/formulario">
-                Preencher formulário
+            <a href="{% url 'colocar_adocao' %}">
+                Cadastrar animal
             </a>
             
             <a href="/contato">
