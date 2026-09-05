@@ -36,3 +36,6 @@ def colocar_adocao(request):
 
 def sucesso_cadastro(request):
     return render(request, 'sucesso_cadastro.html')
+
+def sobre_nos(request):
+    return render(request, 'sobre_nos.html')

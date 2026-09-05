@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Sobre Nós</title>
+    
+    <link rel="stylesheet" href="{% static 'sobre_nos.css' %}">
+
+</head>
+
+<body>
+    <div class="container-sobre-nos">
+        <h1>Sobre Nós</h1>
+
+        <div class="imagem-destaque">
+            <img src="{% static 'imagens/animais-adocao.jpg' %}"
+            alt="Desenhos representando a adoção" >
+        </div>
+
+        <p>
+            O PatasQueUnem é um projeto criado com um propósito simples: ajudar animais a encontrarem um lugar para chamar de lar.
+        </p>
+
+        <p>
+            Acreditamos que muitos animais esperam por uma segunda chance, enquanto pessoas dispostas a adotar nem sempre sabem onde encontrá-los. Foi pensando nessa conexão que nasceu o PatasQueUnem.
+        </p>
+
+        <p>
+            Nossa plataforma busca aproximar animais que precisam de um lar de pessoas dispostas a oferecer amor, cuidado, segurança e responsabilidade. Porque adotar não é apenas levar um animal para casa, mas assumir um compromisso e criar um vínculo para a vida toda.
+        </p>
+
+
+        <h2>
+            Nosso objetivo
+        </h2>
+       
+        <p>
+            Nosso objetivo é tornar a adoção mais simples, acessível e organizada.
+        </p>
+
+        <p>
+            Queremos facilitar a divulgação de animais que estão à procura de uma família e ajudar pessoas interessadas em adotar a encontrarem um companheiro que combine com seu estilo de vida.
+        </p>
+
+        <p>
+            Através da tecnologia, buscamos criar uma ponte entre animais que esperam por uma oportunidade e pessoas dispostas a oferecer um lar cheio de carinho e cuidado.
+        </p>
+
+        <p>
+            Mais do que encontrar um animal, queremos ajudar a encontrar um novo começo.
+        </p>
+
+        <h3>
+            Créditos
+        </h3>
+        
+        <div class="logo-univesp">
+            <img src="{% static 'imagens/logo-univesp.png' %}" alt="Logo da UNIVESP">
+        </div>
+
+        <p>
+            O PatasQueUnem nasceu de uma ideia e ganhou vida através da tecnologia.
+        </p>
+
+        <p>
+            O projeto foi desenvolvido por os estudantes da UNIVESP — Universidade Virtual do Estado de São Paulo, unindo aprendizado, criatividade e amor pelos animais.
+        </p>
+
+        <p>
+            Cada parte da plataforma foi construída com dedicação, desde a ideia inicial até o desenvolvimento do site, com o propósito de criar uma ferramenta que possa contribuir para a adoção responsável.
+        </p>
+
+        <p>
+            <strong>Idealização e desenvolvimento web:</strong><br>
+            Yasmim Pereira Lima
+        </p>
+
+        <p>
+            <strong>Instituição:</strong><br>
+            UNIVESP — Universidade Virtual do Estado de São Paulo
+        </p>
+
+
+    </div>
+</body>
+
+<div class="back">
+    <a href="{% url 'home' %}" class="btn-back">
+        Voltar ao início
+    </a>
+</div>
+
+</html>
