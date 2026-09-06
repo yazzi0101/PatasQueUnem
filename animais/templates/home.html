@@ -19,6 +19,33 @@
 
 
 <body>
+
+    <nav class="navbar">
+        <a href="{% url 'home' %}" class="logo">
+             PatasQueUnem
+        </a>
+
+        <div class="menu-topo">
+
+            <a href="{% url 'home' %}">
+                Página Inicial
+            </a>
+
+            <a href="{% url 'animais_disponiveis' %}">
+                Animais para adoção
+            </a>
+
+            <a href="{% url 'colocar_adocao' %}">
+                Cadastrar animal
+            </a>
+
+            <a href="{% url 'sobre_nos' %}">
+                Sobre Nós
+            </a>
+
+        </div>
+
+    </nav>
     
     <main class="conteudo">
         <!-- Cabeçalho da página -->
@@ -48,28 +75,6 @@
 
      
     </main>
-
- <!-- SIDEBAR-->
-    
-  <aside class="sidebar">
-        <nav class="menu">
-            <a href="{% url 'home' %}" class="active">
-                Pagina Inicial
-            </a>
-
-            <a href="{% url 'animais_disponiveis' %}">
-                Animais para adoção
-            </a>
-            
-            <a href="{% url 'colocar_adocao' %}">
-                Cadastrar animal
-            </a>
-            
-            <a href="{% url 'sobre_nos' %}">
-                Sobre Nós
-            </a>
-        </nav>
-    </aside>
    
    <script src="home.js"></script>
 

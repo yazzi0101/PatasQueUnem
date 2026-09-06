@@ -39,3 +39,16 @@ def sucesso_cadastro(request):
 
 def sobre_nos(request):
     return render(request, 'sobre_nos.html')
+
+def detalhes_animal(request, id):
+    animal = Animal.objects.get(
+        id=id,
+        status='aprovado',
+        adotado=False
+    )
+
+    return render(
+        request,
+        'detalhes_animal.html',
+        {'animal': animal}
+    )

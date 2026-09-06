@@ -1,0 +1,140 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ animal.nome }} - PatasQueUnem</title>
+
+    <link rel="stylesheet" href="{% static 'detalhes_animal.css' %}">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="{% url 'home' %}" class="logo">
+             PatasQueUnem
+        </a>
+
+        <div class="menu-topo">
+
+            <a href="{% url 'home' %}">
+                Página Inicial
+            </a>
+
+            <a href="{% url 'animais_disponiveis' %}">
+                Animais para adoção
+            </a>
+
+            <a href="{% url 'colocar_adocao' %}">
+                Cadastrar animal
+            </a>
+
+            <a href="{% url 'sobre_nos' %}">
+                Sobre Nós
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="detalhes-container">
+
+        <a href="{% url 'animais_disponiveis' %}" class="voltar">
+            ← Voltar para animais
+        </a>
+
+        <div class="animal-detalhes">
+
+            <div class="foto-animal">
+
+                <img
+                    src="{{ animal.foto.url }}"
+                    alt="Foto de {{ animal.nome }}"
+                >
+
+            </div>
+
+            <div class="informacoes-animal">
+
+                <h1>{{ animal.nome }}</h1>
+
+                <p>
+                    <strong>Espécie:</strong>
+                    {{ animal.especie }}
+                </p>
+
+                <p>
+                    <strong>Idade:</strong>
+                    {{ animal.idade }}
+                    {{ animal.get_selecione_display|lower }}
+                </p>
+
+                <p>
+                    <strong>Sexo:</strong>
+                    {{ animal.get_sexo_display }}
+                </p>
+
+                <div class="descricao">
+
+                    <h2>Sobre {{ animal.nome }}</h2>
+
+                    <p>
+                        {{ animal.descricao }}
+                    </p>
+
+                </div>
+
+                {% if animal.motivo_doacao %}
+
+                    <div class="motivo">
+
+                        <h2>Motivo da doação</h2>
+
+                        <p>
+                            {{ animal.motivo_doacao }}
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+                {% if animal.possui_problema_saude %}
+
+                    <div class="saude">
+
+                        <h2>Informações de saúde</h2>
+
+                        <p>
+                            {{ animal.problema_saude }}
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+                <p class="localizacao">
+                    📍 {{ animal.cidade }} - {{ animal.estado }}
+                </p>
+
+                <a
+                    href="#"
+                    class="btn-adotar"
+                >
+                    Quero adotar
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
