@@ -57,15 +57,19 @@
         </h2>
 
         <section class="boas-vindas">
-            <img src="https://cdn.pixabay.com/photo/2021/10/13/09/01/corgi-6705821_1280.jpg" alt="Ícone de boas-vindas"> 
+            <img src="{% static 'imagens/bem-vindos.png' %}" alt="Ícone de boas-vindas"> 
         </section>
 
-        <p class="descricao-site">
-            A adoção de animais é um ato de amor e responsabilidade que pode transformar a vida de um ser indefeso. 
-            Ao adotar um animal, você não apenas oferece um lar seguro e amoroso para um companheiro peludo, mas também contribui para a redução do abandono e do sofrimento animal. 
-            Além disso, a adoção promove a conscientização sobre a importância do cuidado responsável e do respeito aos direitos dos animais. 
-            Ao escolher adotar, você está fazendo uma escolha ética e solidária, ajudando a criar um mundo mais compassivo para todos os seres vivos.
-        </p>
+        <div class="descricao-site"
+            <p1>
+                A adoção de animais é um ato de amor e responsabilidade que pode transformar a vida de um ser indefeso. 
+                Ao adotar um animal, você não apenas oferece um lar seguro e amoroso para um companheiro peludo, mas também contribui para a redução do abandono e do sofrimento animal.
+            </p>
+        
+            <p2>
+                Além disso, a adoção promove a conscientização sobre a importância do cuidado responsável e do respeito aos direitos dos animais. 
+                Ao escolher adotar, você está fazendo uma escolha ética e solidária, ajudando a criar um mundo mais compassivo para todos os seres vivos.
+            </p2>
 
         <div class="area-animais">
             <a href="{% url 'animais_disponiveis' %}" class="btn-animais">
