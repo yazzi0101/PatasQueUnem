@@ -181,27 +181,28 @@ form button:hover {
 
 }
 
-.back {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
+.voltar {
+    display: inline-block;
 
-.btn-back {
-    background-color: #7b9c6d;
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
+
+    font-size: 20px;
     font-weight: bold;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    position: relative;
+    left: 420px;
+    top: 20px;
+    
+
     transition: 0.3s;
 }
 
-.btn-back:hover {
-    background-color: #9cf37c;
-    transform: scale(1.05);
+.voltar:hover {
+    transform: translateX(-10px);
 }
 
 .campo-duplo {

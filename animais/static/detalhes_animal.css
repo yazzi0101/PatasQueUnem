@@ -62,14 +62,14 @@ body {
 }
 
 .voltar {
-    display: inline-block;
 
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
 
     font-size: 17px;
     font-weight: bold;
 
+    margin-left: 50px;
     margin-bottom: 25px;
 
     transition: 0.3s;

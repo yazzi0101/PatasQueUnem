@@ -39,6 +39,11 @@
 
     </nav>
 
+    <a href="{% url 'animais_disponiveis' %}" class="voltar">
+            ← Voltar para animais
+        </a>
+
+
     <div class="container-formulario">
 
         <h1>Colocar um animal para adoção</h1>
@@ -177,12 +182,6 @@
 
         </form>
 
-    </div>
-
-    <div class="back">
-        <a href="{% url 'home' %}" class="btn-back">
-            Voltar ao início
-        </a>
     </div>
 
     <script src="{%static 'colocar_adocao.js'%}"></script>
