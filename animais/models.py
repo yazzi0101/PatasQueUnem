@@ -174,6 +174,21 @@ class Adotante(models.Model):
         verbose_name='Endereço'
     )
 
+    bairro = models.CharField(
+    max_length=100,
+    verbose_name='Bairro'
+    )
+
+    cidade = models.CharField(
+        max_length=100,
+        verbose_name='Cidade'
+    )
+
+    estado = models.CharField(
+        max_length=2,
+        verbose_name='Estado'
+    )
+
     tipo_residencia = models.CharField(
         max_length=20,
         choices=TIPO_RESIDENCIA_CHOICES,

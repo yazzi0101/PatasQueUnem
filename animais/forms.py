@@ -1,6 +1,7 @@
 from django import forms
 from django.core.validators import RegexValidator
-from .models import Animal
+
+from .models import Animal, Adotante
 
 
 class AnimalForm(forms.ModelForm):
@@ -66,3 +67,34 @@ class AnimalForm(forms.ModelForm):
         widgets = {
             'sexo': forms.Select(choices=[('', 'Selecione o sexo')] + list(Animal.SEXO_CHOICES)),
         }
+
+class AdotanteForm(forms.ModelForm):
+
+    class Meta:
+        model = Adotante
+
+        fields = [
+            'nome_completo',
+            'data_nascimento',
+            'telefone',
+            'email',
+            'cep',
+            'endereco',
+            'bairro',
+            'cidade',
+            'estado',
+            'tipo_residencia',
+            'com_quem_mora',
+            'residencia_segura',
+            'restricao_animais',
+            'possui_outros_animais',
+            'quais_animais',
+            'convivencia_animais',
+            'rotina',
+            'tempo_sozinho',
+            'pessoa_apoio',
+            'motivo_adocao',
+            'experiencia_anterior',
+            'preferencia_animal',
+            'aceita_responsabilidades',
+        ]

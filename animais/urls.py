@@ -32,5 +32,11 @@ urlpatterns = [
         'sobre-nos/',
         views.sobre_nos,
         name='sobre_nos'
+    ),
+    
+    path(
+    'adotar/<int:id>/',
+    views.adotar_animal,
+    name='adotar_animal'
     )
 ]

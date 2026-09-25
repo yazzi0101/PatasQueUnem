@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Animal
-from .forms import AnimalForm
+from .models import Animal, InteresseAdocao
+from .forms import AnimalForm, AdotanteForm
 
 
 def home(request):
@@ -51,4 +51,37 @@ def detalhes_animal(request, id):
         request,
         'detalhes_animal.html',
         {'animal': animal}
+    )
+    
+def adotar_animal(request, id):
+
+    animal = Animal.objects.get(
+        id=id,
+        status='aprovado',
+        adotado=False
+    )
+
+    if request.method == 'POST':
+        form = AdotanteForm(request.POST)
+
+        if form.is_valid():
+            adotante = form.save()
+
+            InteresseAdocao.objects.create(
+                adotante=adotante,
+                animal=animal
+            )
+
+            return redirect('sucesso_adocao')
+
+    else:
+        form = AdotanteForm()
+
+    return render(
+        request,
+        'adotar_um.html',
+        {
+            'form': form,
+            'animal': animal
+        }
     )
