@@ -5,3 +5,7 @@ __pycache__/
 .vscode/
 media/
 staticfiles/
+.venv/
+.env
+.env.*
+!.env.example
