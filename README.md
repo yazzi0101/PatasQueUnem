@@ -54,7 +54,7 @@ O projeto reúne desenvolvimento web, integração com API externa, validação 
 - Python instalado.
 - Git instalado caso deseje clonar o repositório pelo terminal.
 
-Observação: Observação sobre imagens: o projeto utiliza o Cloudinary para armazenar as fotos dos animais na nuvem. Para testar localmente as funcionalidades de cadastro e upload de imagens, configure as credenciais do serviço nas variáveis de ambiente correspondentes. O SQLite é utilizado para armazenar os dados no ambiente local.
+Observação sobre imagens: o projeto utiliza o Cloudinary para armazenar as fotos dos animais na nuvem. Para testar localmente as funcionalidades de cadastro e upload de imagens, configure as credenciais do serviço nas variáveis de ambiente correspondentes. O SQLite é utilizado para armazenar os dados no ambiente local.
 
 ### 1. Clonar o repositório
 
@@ -112,11 +112,11 @@ Abra o navegador em:
 
 http://127.0.0.1:8000/
 
-> **Nota sobre a hospedagem:** o projeto está hospedado no plano gratuito do Render. Por ser uma hospedagem gratuita, a disponibilidade contínua do site não é garantida e pode mudar conforme as condições da plataforma. Para conhecer o projeto, consulte também o código-fonte e as capturas de tela disponíveis nesse repositório.
-
 ## Status do projeto
 
 **Aplicação publicada e funcional, com melhorias contínuas.**
+
+> **Nota sobre a hospedagem:** o projeto está hospedado no plano gratuito do Render. Por ser uma hospedagem gratuita, a disponibilidade contínua do site não é garantida e pode mudar conforme as condições da plataforma. Para conhecer o projeto, consulte também o código-fonte e as capturas de tela disponíveis nesse repositório.
 
 Acesse: https://patasqueunem.onrender.com/
 
