@@ -27,6 +27,13 @@ urlpatterns = [
         views.sucesso_cadastro,
         name='sucesso_cadastro'
     ),
+
+    path(
+        'sucesso-adocao/',
+        views.sucesso_adocao,
+        name='sucesso_adocao'
+    ),
+
     
     path(
         'sobre-nos/',

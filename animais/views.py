@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Animal, InteresseAdocao
 from .forms import AnimalForm, AdotanteForm
+from django.db import transaction
 
 
 def home(request):
@@ -37,6 +38,10 @@ def colocar_adocao(request):
 def sucesso_cadastro(request):
     return render(request, 'sucesso_cadastro.html')
 
+
+def sucesso_adocao(request):
+    return render(request, 'sucesso_adocao.html')
+
 def sobre_nos(request):
     return render(request, 'sobre_nos.html')
 
@@ -65,14 +70,15 @@ def adotar_animal(request, id):
         form = AdotanteForm(request.POST)
 
         if form.is_valid():
-            adotante = form.save()
+            with transaction.atomic():
+                adotante = form.save()
 
-            InteresseAdocao.objects.create(
-                adotante=adotante,
-                animal=animal
-            )
+                InteresseAdocao.objects.create(
+                    adotante=adotante,
+                    animal=animal
+                )
 
-            return redirect('sucesso_adocao')
+                return redirect('sucesso_adocao')
 
     else:
         form = AdotanteForm()

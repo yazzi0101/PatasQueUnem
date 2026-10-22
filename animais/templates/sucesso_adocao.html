@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interesse enviado</title>
+
+    <link rel="stylesheet" href="{% static 'sucesso_cadastro.css' %}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="{% url 'home' %}" class="logo">
+             PatasQueUnem
+        </a>
+
+        <div class="menu-topo">
+
+            <a href="{% url 'home' %}">
+                Página Inicial
+            </a>
+
+            <a href="{% url 'animais_disponiveis' %}">
+                Animais para adoção
+            </a>
+
+            <a href="{% url 'colocar_adocao' %}">
+                Cadastrar animal
+            </a>
+
+            <a href="{% url 'sobre_nos' %}">
+                Sobre Nós
+            </a>
+
+        </div>
+    </nav>
+
+    <main class="mensagem-sucesso">
+
+        <div class="icone">🐾</div>
+
+        <h1>
+            Interesse enviado com sucesso!
+        </h1>
+
+        <p>
+            Obrigado por querer fazer parte da história de um animal.
+        </p>
+
+        <p>
+            Seus dados foram registrados para análise, em breve a equipe entrará em contato com você.
+        </p>
+
+
+        <a href="{% url 'home' %}" class="btn-voltar">
+            Voltar para o início
+        </a>
+
+    </main>
+
+    
+</body>
+</html>
