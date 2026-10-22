@@ -1,0 +1,364 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #e1faba;
+    font-family: 'Inter', sans-serif;
+    color: #304638;
+}
+
+/* Navegação */
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 18px 40px;
+    background-color: #3a5f3a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.menu-topo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.menu-topo a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.25s ease;
+}
+
+.menu-topo a:hover {
+    background-color: #588d58;
+}
+
+/* Conteúdo principal */
+.pagina-adocao {
+    width: calc(100% - 40px);
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.cabecalho-formulario {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cabecalho-formulario h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #3a5f3a;
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.cabecalho-formulario p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #4d5e50;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Animal selecionado */
+.animal-escolhido {
+    background-color: #fff8fc;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.animal-escolhido h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #3a5f3a;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.informacoes-animal {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.foto-animal {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.informacoes-animal h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #304638;
+}
+
+.informacoes-animal p {
+    margin-bottom: 7px;
+    line-height: 1.5;
+}
+
+/* Formulário e seções */
+.formulario-adocao {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.secao-formulario {
+    background-color: #fff8fc;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.secao-formulario h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 23px;
+    color: #3a5f3a;
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #dce8d5;
+}
+
+/* Campos */
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.campo:last-child {
+    margin-bottom: 0;
+}
+
+.campo label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #304638;
+}
+
+.campo input:not([type="checkbox"]),
+.campo select,
+.campo textarea {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 13px;
+    border: 1px solid #b8cbb3;
+    border-radius: 9px;
+    background-color: #ffffff;
+    color: #304638;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #3a5f3a;
+    box-shadow: 0 0 0 3px rgba(58, 95, 58, 0.15);
+}
+
+/* Caixas de marcação */
+.campo-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.campo-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: #3a5f3a;
+    flex-shrink: 0;
+}
+
+.campo-checkbox label {
+    flex: 1;
+    line-height: 1.5;
+}
+
+.aceite-responsabilidade p {
+    flex-basis: 100%;
+    margin-top: 5px;
+    color: #566457;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Erros de validação do Django */
+.errorlist {
+    list-style: none;
+    color: #a12828;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Botões */
+.acoes-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.btn-enviar,
+.btn-cancelar {
+    display: inline-block;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.btn-enviar {
+    background-color: #3a5f3a;
+    color: white;
+}
+
+.btn-enviar:hover {
+    background-color: #588d58;
+    transform: translateY(-2px);
+}
+
+.btn-cancelar {
+    background-color: #dce8d5;
+    color: #304638;
+}
+
+.btn-cancelar:hover {
+    background-color: #c8dabb;
+    transform: translateY(-2px);
+}
+
+.btn-enviar:focus-visible,
+.btn-cancelar:focus-visible,
+.menu-topo a:focus-visible {
+    outline: 3px solid #304638;
+    outline-offset: 3px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .navbar {
+        justify-content: center;
+        padding: 18px 16px;
+    }
+
+    .menu-topo {
+        justify-content: center;
+    }
+
+    .menu-topo a {
+        padding: 9px 10px;
+        font-size: 14px;
+    }
+
+    .pagina-adocao {
+        width: calc(100% - 24px);
+        margin: 25px auto;
+    }
+
+    .cabecalho-formulario h1 {
+        font-size: 26px;
+    }
+
+    .cabecalho-formulario p {
+        font-size: 15px;
+    }
+
+    .animal-escolhido,
+    .secao-formulario {
+        padding: 22px 18px;
+        border-radius: 14px;
+    }
+
+    .informacoes-animal {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .foto-animal {
+        width: 110px;
+        height: 110px;
+    }
+
+    .informacoes-animal h3 {
+        font-size: 20px;
+    }
+
+    .secao-formulario h2 {
+        font-size: 20px;
+    }
+
+    .acoes-formulario {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-enviar,
+    .btn-cancelar {
+        width: 100%;
+    }
+}
+
+/* Espaçamento da seção de responsabilidades */
+.secao-formulario ul {
+    margin-top: 16px;
+    margin-bottom: 24px;
+    padding-left: 24px;
+}
+
+.secao-formulario ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.aceite-responsabilidade {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #d8e4cf;
+}
+
+.aceite-responsabilidade label {
+    line-height: 1.6;
+}

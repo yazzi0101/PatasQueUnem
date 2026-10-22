@@ -127,6 +127,11 @@ class Adotante(models.Model):
         ('outro', 'Outro'),
     ]
 
+    EXPERIENCIA_CHOICES = [
+    ('sim', 'Sim, já tive'),
+    ('nao', 'Não, essa é minha primeira vez'),
+    ]
+
     TEMPO_SOZINHO_CHOICES = [
         ('menos_2', 'Menos de 2 horas'),
         ('2_4', 'De 2 a 4 horas'),
@@ -176,17 +181,23 @@ class Adotante(models.Model):
 
     bairro = models.CharField(
     max_length=100,
+    blank=True,
+    default='',
     verbose_name='Bairro'
     )
 
     cidade = models.CharField(
-        max_length=100,
-        verbose_name='Cidade'
+    max_length=100,
+    blank=True,
+    default='',
+    verbose_name='Cidade'
     )
 
     estado = models.CharField(
-        max_length=2,
-        verbose_name='Estado'
+    max_length=2,
+    blank=True,
+    default='',
+    verbose_name='Estado'
     )
 
     tipo_residencia = models.CharField(
@@ -200,8 +211,8 @@ class Adotante(models.Model):
         verbose_name='Com quem mora'
     )
 
-    residencia_segura = models.BooleanField(
-        verbose_name='A residência é segura e adequada para receber o animal?'
+    residencia_segura = models.TextField(
+    verbose_name='Como sua residência é protegida e adequada para receber o animal?'
     )
 
     restricao_animais = models.CharField(
@@ -220,11 +231,9 @@ class Adotante(models.Model):
         verbose_name='Quais animais possui e quantos?'
     )
 
-    convivencia_animais = models.CharField(
-        max_length=20,
-        choices=CONVIVENCIA_CHOICES,
-        blank=True,
-        verbose_name='Como é a convivência com outros animais?'
+    convivencia_animais = models.TextField(
+    blank=True,
+    verbose_name='Como você pretende apresentar o novo animal aos animais que já vivem com você?'
     )
 
     rotina = models.CharField(
@@ -247,8 +256,10 @@ class Adotante(models.Model):
         verbose_name='Por que deseja adotar um animal?'
     )
 
-    experiencia_anterior = models.BooleanField(
-        verbose_name='Já teve algum animal anteriormente?'
+    experiencia_anterior = models.CharField(
+        max_length=3,
+        choices=EXPERIENCIA_CHOICES,
+        verbose_name='Você já teve algum animal anteriormente?'
     )
 
     preferencia_animal = models.TextField(

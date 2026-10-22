@@ -1,197 +1,262 @@
 {% load static %}
-
 <!DOCTYPE html>
-
-<html lang="pt-BR"
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"
-    <meta> name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adotar um amigo</title>
-    <link rel="stylesheet" href="{% static 'adotar_um.css' %}?v=1.1">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Quero adotar</title>
+
+    <link rel="stylesheet" href="{% static 'adotar_um.css' %}">
+    <script src="{% static 'adotar_um.js' %}" defer></script>
+</head>
 <body>
+
     <nav class="navbar">
-        <a href="{% url 'home' %}" class="logo">
-             PatasQueUnem
-        </a>
+        <a href="{% url 'home' %}" class="logo">PatasQueUnem</a>
 
         <div class="menu-topo">
-
-            <a href="{% url 'home' %}">
-                Página Inicial
-            </a>
-
-            <a href="{% url 'animais_disponiveis' %}">
-                Animais para adoção
-            </a>
-
-            <a href="{% url 'colocar_adocao' %}">
-                Cadastrar animal
-            </a>
-
-            <a href="{% url 'sobre_nos' %}">
-                Sobre Nós
-            </a>
-
+            <a href="{% url 'home' %}">Página Inicial</a>
+            <a href="{% url 'animais_disponiveis' %}">Animais para adoção</a>
+            <a href="{% url 'colocar_adocao' %}">Cadastrar animal</a>
+            <a href="{% url 'sobre_nos' %}">Sobre Nós</a>
         </div>
-
     </nav>
 
-     <a href="{% url 'animais_disponiveis' %}" class="voltar">
-            ← Voltar para animais
-    </a>
+    <main class="pagina-adocao">
 
+        <header class="cabecalho-formulario">
+            <h1>Vamos encontrar um lar cheio de amor?</h1>
+            <p>
+                Conte um pouco sobre você e sua rotina.
+                Essas informações nos ajudarão a entender se a adoção
+                é adequada para você e para o animal.
+            </p>
+        </header>
 
-    <div class="container-formulario">
-    
-        <h1>Adotar o animal (animal)</h1>
+        <section class="animal-escolhido">
+            <h2>Animal escolhido</h2>
 
-        <p>
-            Preencha o formulário abaixo para adotar (animal).
-            O cadastro será analisado pela nossa equipe antes de ser aprovado.
-        </p>
+            <div class="informacoes-animal">
+                {% if animal.foto %}
+                    <img
+                        src="{{ animal.foto.url }}"
+                        alt="Foto de {{ animal.nome }}"
+                        class="foto-animal"
+                    >
+                {% endif %}
 
-        <form method="POST" enctype="multipart/form-data">
+                <div>
+                    <h3>{{ animal.nome }}</h3>
+                    <p>Espécie: {{ animal.especie }}</p>
+                    <p>Idade: {{ animal.idade }} {{ animal.selecione }}</p>
+                    <p>Sexo: {{ animal.sexo }}</p>
+                </div>
+            </div>
+        </section>
+
+        <form method="POST" class="formulario-adocao">
             {% csrf_token %}
 
-            <h2> Informações do animal</h2>
-
-            <div class="campo">
-                {{ form.nome.label_tag }}
-                {{ form.nome }}
-                {{ form.nome.errors }}
-            </div>
-
-            <div class="campo">
-                {{ form.foto.label_tag }}
-                {{ form.foto }}
-                {{ form.foto.errors }}
-            </div>
-
-            <div class="campo">
-                {{ form.especie.label_tag }}
-                {{ form.especie }}
-                {{ form.especie.errors }}
-            </div>
-
-            <div class="campo-duplo">
-                <div class="campo flex-2">
-                    {{ form.idade.label_tag }}
-                    {{ form.idade }}
-                    {{ form.idade.errors }}
+            {% if form.non_field_errors %}
+                <div class="erros-formulario">
+                    {{ form.non_field_errors }}
                 </div>
-                <div class="campo flex-1">
-                    {{ form.selecione.label_tag }}
-                    {{ form.selecione }}
-                    {{ form.selecione.errors }}
+            {% endif %}
+
+            <section class="secao-formulario">
+                <h2>1. Sobre você</h2>
+
+                <div class="campo">
+                    {{ form.nome_completo.label_tag }}
+                    {{ form.nome_completo }}
+                    {{ form.nome_completo.errors }}
                 </div>
-            </div>
 
-            <div class="campo">
-                {{ form.sexo.label_tag }}
-                {{ form.sexo }}
-                {{ form.sexo.errors }}
-            </div>
+                <div class="campo">
+                    {{ form.data_nascimento.label_tag }}
+                    {{ form.data_nascimento }}
+                    {{ form.data_nascimento.errors }}
+                </div>
 
-            <div class="campo">
-                {{ form.descricao.label_tag }}
-                {{ form.descricao }}
-                {{ form.descricao.errors }}
-            </div>
+                <div class="campo">
+                    {{ form.telefone.label_tag }}
+                    {{ form.telefone }}
+                    {{ form.telefone.errors }}
+                </div>
 
+                <div class="campo">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
+            </section>
 
-            <h2>Sobre a doação</h2>
+            <section class="secao-formulario">
+                <h2>2. Onde você mora</h2>
 
-            <div class="campo">
-                {{ form.motivo_doacao.label_tag }}
-                {{ form.motivo_doacao }}
-                {{ form.motivo_doacao.errors }}
-            </div>
+                <div class="campo">
+                    {{ form.cep.label_tag }}
+                    {{ form.cep }}
+                    {{ form.cep.errors }}
+                </div>
 
-           
-            <div class="campo campo-checkbox">
-                {{ form.possui_problema_saude }}
-                {{ form.possui_problema_saude.label_tag }}
-                {{ form.possui_problema_saude.errors }}
-            </div>
+                <div class="campo">
+                    {{ form.endereco.label_tag }}
+                    {{ form.endereco }}
+                    {{ form.endereco.errors }}
+                </div>
 
-            <div class="campo" id="campo-problema-saude">
-                {{ form.problema_saude.label_tag }}
-                {{ form.problema_saude }}
-                {{ form.problema_saude.errors }}
-            </div>
+                <div class="campo">
+                    {{ form.bairro.label_tag }}
+                    {{ form.bairro }}
+                    {{ form.bairro.errors }}
+                </div>
 
-
-            
-
-            <h2>Dados para contato</h2>
-
-            <div class="campo">
-                {{ form.telefone.label_tag }}
-                {{ form.telefone }}
-                {{ form.telefone.errors }}
-            </div>
-
-            <div class="campo">
-                {{ form.email.label_tag }}
-                {{ form.email }}
-                {{ form.email.errors }}
-            </div>
-
-
-        
-
-            <h2>Localização</h2>
-
-            <div class="campo">
-                {{ form.cep.label_tag }}
-                {{ form.cep }}
-                {{ form.cep.errors }}
-            </div>
-
-            <div class="campo">
-                {{ form.endereco.label_tag }}
-                {{ form.endereco }}
-                {{ form.endereco.errors }}
-            </div>
-
-            <div class="campo">
-                {{ form.bairro.label_tag }}
-                {{ form.bairro }}
-                {{ form.bairro.errors }}
-            </div>
-
-        
-            <div class="campo-duplo">
-                <div class="campo flex-3">
+                <div class="campo">
                     {{ form.cidade.label_tag }}
                     {{ form.cidade }}
                     {{ form.cidade.errors }}
                 </div>
-                <div class="campo flex-1">
+
+                <div class="campo">
                     {{ form.estado.label_tag }}
                     {{ form.estado }}
                     {{ form.estado.errors }}
                 </div>
+
+                <div class="campo">
+                    {{ form.tipo_residencia.label_tag }}
+                    {{ form.tipo_residencia }}
+                    {{ form.tipo_residencia.errors }}
+                </div>
+
+                <div class="campo">
+                    {{ form.com_quem_mora.label_tag }}
+                    {{ form.com_quem_mora }}
+                    {{ form.com_quem_mora.errors }}
+                </div>
+
+                <div class="campo">
+                    {{ form.residencia_segura.label_tag }}
+                    {{ form.residencia_segura }}
+                    {{ form.residencia_segura.errors }}
+                </div>
+
+            </section>
+
+            <section class="secao-formulario">
+                <h2>3. Convivência com animais</h2>
+
+                <div class="campo">
+                    {{ form.restricao_animais.label_tag }}
+                    {{ form.restricao_animais }}
+                    {{ form.restricao_animais.errors }}
+                </div>
+
+                <div class="campo campo-checkbox">
+                    {{ form.possui_outros_animais }}
+                    {{ form.possui_outros_animais.label_tag }}
+                    {{ form.possui_outros_animais.errors }}
+                </div>
+
+                <div class="campo" id="campo-quais-animais">
+                    {{ form.quais_animais.label_tag }}
+                    {{ form.quais_animais }}
+                    {{ form.quais_animais.errors }}
+                </div>
+
+                <div class="campo">
+                    {{ form.convivencia_animais.label_tag }}
+                    {{ form.convivencia_animais }}
+                    {{ form.convivencia_animais.errors }}
+                </div>
+            </section>
+
+            <section class="secao-formulario">
+                <h2>4. Rotina e disponibilidade</h2>
+
+                <div class="campo">
+                    {{ form.rotina.label_tag }}
+                    {{ form.rotina }}
+                    {{ form.rotina.errors }}
+                </div>
+
+                <div class="campo">
+                    {{ form.tempo_sozinho.label_tag }}
+                    {{ form.tempo_sozinho }}
+                    {{ form.tempo_sozinho.errors }}
+                </div>
+
+                <div class="campo">
+                    {{ form.pessoa_apoio.label_tag }}
+                    {{ form.pessoa_apoio }}
+                    {{ form.pessoa_apoio.errors }}
+                </div>
+            </section>
+
+            
+            <section class="secao-formulario">
+                <h2>5. Sobre a adoção</h2>
+
+                <div class="campo">
+                    {{ form.motivo_adocao.label_tag }}
+                    {{ form.motivo_adocao }}
+                    {{ form.motivo_adocao.errors }}
+                </div>
+
+                <div class="campo">
+                    {{ form.experiencia_anterior.label_tag }}
+                    {{ form.experiencia_anterior }}
+                    {{ form.experiencia_anterior.errors }}
+                </div>
+            </section>
+
+            <section class="secao-formulario">
+                <h2>6. Responsabilidades da adoção</h2>
+
+                <p>
+                    Adotar um animal é assumir um compromisso de longo prazo.
+                    Antes de enviar sua solicitação, considere as responsabilidades:
+                </p>
+
+                <ul>
+                    <li>Alimentação e hidratação: oferecer alimento adequado à espécie e à fase da vida, além de água limpa e fresca diariamente.</li>
+                    <li>Saúde: garantir consultas veterinárias, vacinação, vermifugação, prevenção de doenças e atendimento quando necessário.</li>
+                    <li>Segurança e moradia: proporcionar abrigo, ambiente seguro e condições adequadas para o animal.</li>
+                    <li>Tempo e atenção: dedicar tempo à convivência, ao carinho, às brincadeiras e aos estímulos físicos e mentais.</li>
+                    <li>Compromisso financeiro: arcar com alimentação, cuidados veterinários, higiene e outras despesas necessárias.</li>
+                    <li>Responsabilidade permanente: não abandonar nem maltratar o animal e cuidar dele durante toda a sua vida.</li>
+                </ul>
+
+                <div class="campo campo-checkbox aceite-responsabilidade">
+                    <input
+                        type="checkbox"
+                        name="aceita_responsabilidades"
+                        id="id_aceita_responsabilidades"
+                        required
+                    >
+                    <label for="id_aceita_responsabilidades">
+                        Sim, estou de acordo com as responsabilidades da adoção.
+                    </label>
+                    {{ form.aceita_responsabilidades.errors }}
+                </div>
+            </section>
+
+
+            <div class="acoes-formulario">
+                <button type="submit" class="btn-enviar">
+                    Enviar interesse de adoção
+                </button>
+
+                <a href="{% url 'detalhes_animal' animal.id %}"
+                   class="btn-cancelar">
+                    Voltar para o animal
+                </a>
             </div>
 
-            <button type="submit">Enviar cadastro</button>
-
         </form>
-
-    </div>
-
-    <div class="back">
-        <a href="{% url 'home' %}" class="btn-back">
-            Voltar ao início
-        </a>
-    </div>
-
-    <script src="{%static 'adotar_um.js'%}"></script>
-    
-</div>
+    </main>
 
 </body>
-
+</html>
