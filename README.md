@@ -1,4 +1,4 @@
-🐾 Patas que Unem
+## 🐾 Patas que Unem
 
 <div align="center">
   <img src="docs/screenshots/logo-patasqueunem.png" alt="Logo Patas que Unem" width="220">
@@ -6,7 +6,7 @@
 
 **Conectando animais que precisam de um lar a pessoas que desejam adotar.**
 
-🌐 **Acesse o site:** https://patasqueunem.onrender.com/
+**Acesse o site:** https://patasqueunem.onrender.com/
 
 ## 📌 Sobre o projeto
 
@@ -16,7 +16,7 @@ A plataforma tem como objetivo facilitar a divulgação de animais disponíveis 
 
 O projeto reúne desenvolvimento web, integração com API externa, validação de dados, banco de dados relacional, armazenamento de imagens em nuvem e publicação de uma aplicação web.
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - Listagem de animais disponíveis para adoção.
 - Página de detalhes com informações dos animais.
@@ -28,7 +28,7 @@ O projeto reúne desenvolvimento web, integração com API externa, validação 
 - Painel administrativo para gerenciamento dos cadastros.
 - Interface web adaptada para facilitar a navegação.
 
-## 🛠️ Tecnologias e ferramentas utilizadas
+## Tecnologias e ferramentas utilizadas
 
 | Tecnologia ou ferramenta | Aplicação no projeto |
 |---|---|
@@ -47,25 +47,14 @@ O projeto reúne desenvolvimento web, integração com API externa, validação 
 | **WhiteNoise** | Servidor de arquivos estáticos da aplicação em produção. |
 | **Gunicorn** | Servidor WSGI utilizado para executar a aplicação Django em produção. |
 
-## ☁️ Arquitetura de publicação
-
-O projeto utiliza diferentes serviços para disponibilizar a aplicação:
-
-- **Render:** executa a aplicação Django e disponibiliza o site publicamente.
-- **PostgreSQL:** armazena os dados da aplicação publicada.
-- **Cloudinary:** armazena as fotos enviadas pelos formulários.
-- **GitHub:** mantém o código-fonte e o histórico de desenvolvimento.
-
-Essa separação permite que o sistema mantenha os dados dos cadastros no banco de dados e as imagens em um serviço específico de armazenamento.
-
-## 🚀 Como executar o projeto localmente
+## Como executar o projeto localmente
 
 ### Pré-requisitos
 
 - Python instalado.
-- Git instalado.
-- Acesso às credenciais do Cloudinary para testar o armazenamento de imagens.
-- Um banco de dados configurado para o ambiente de execução.
+- Git instalado caso deseje clonar o repositório pelo terminal.
+
+Observação: Observação sobre imagens: o projeto utiliza o Cloudinary para armazenar as fotos dos animais na nuvem. Para testar localmente as funcionalidades de cadastro e upload de imagens, configure as credenciais do serviço nas variáveis de ambiente correspondentes. O SQLite é utilizado para armazenar os dados no ambiente local.
 
 ### 1. Clonar o repositório
 
@@ -105,8 +94,6 @@ pip install -r requirements.txt
 
 Configure as variáveis necessárias para o ambiente local, incluindo as credenciais do Cloudinary e, se aplicável, a conexão com o banco de dados.
 
-**Não compartilhe nem publique chaves de API, senhas ou outros segredos no repositório.**
-
 ### 6. Aplicar as migrações
 
 ```bash
@@ -125,19 +112,15 @@ Abra o navegador em:
 
 http://127.0.0.1:8000/
 
-> **Observação:** a configuração local pode utilizar SQLite, enquanto o ambiente publicado utiliza PostgreSQL. As credenciais e os serviços externos precisam estar configurados para testar todas as funcionalidades localmente.
+> **Nota sobre a hospedagem:** o projeto está hospedado no plano gratuito do Render. Por ser uma hospedagem gratuita, a disponibilidade contínua do site não é garantida e pode mudar conforme as condições da plataforma. Para conhecer o projeto, consulte também o código-fonte e as capturas de tela disponíveis nesse repositório.
 
-## 🎓 Contexto acadêmico
-
-Projeto desenvolvido no âmbito do Projeto Integrador do curso de Análise e Desenvolvimento de Sistemas da UNIVESP, com foco na aplicação prática dos conhecimentos de desenvolvimento web, banco de dados, integração com APIs, validação de dados, controle de versão e publicação em nuvem.
-
-## 📍 Status do projeto
+## Status do projeto
 
 **Aplicação publicada e funcional, com melhorias contínuas.**
 
 Acesse: https://patasqueunem.onrender.com/
 
-## 🖥️ Demonstração do sistema
+## Sistema
 
 ### Página inicial
 
