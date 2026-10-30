@@ -12,7 +12,6 @@ body {
     color: #304638;
 }
 
-/* Navegação */
 .navbar {
     width: 100%;
     display: flex;
@@ -51,7 +50,6 @@ body {
     background-color: #588d58;
 }
 
-/* Conteúdo principal */
 .pagina-adocao {
     width: calc(100% - 40px);
     max-width: 900px;
@@ -119,7 +117,6 @@ body {
     line-height: 1.5;
 }
 
-/* Formulário e seções */
 .formulario-adocao {
     display: flex;
     flex-direction: column;
@@ -217,7 +214,6 @@ body {
     line-height: 1.6;
 }
 
-/* Erros de validação do Django */
 .errorlist {
     list-style: none;
     color: #a12828;
@@ -341,7 +337,6 @@ body {
     }
 }
 
-/* Espaçamento da seção de responsabilidades */
 .secao-formulario ul {
     margin-top: 16px;
     margin-bottom: 24px;
@@ -361,4 +356,18 @@ body {
 
 .aceite-responsabilidade label {
     line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; 
+    align-items: center;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
 }
