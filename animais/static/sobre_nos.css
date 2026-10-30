@@ -26,21 +26,15 @@ body {
 }
 
 .voltar {
-    display: inline-block;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    margin: 30px auto 0;
 
     color: #3a5f3a;
     text-decoration: none;
-
     font-size: 20px;
     font-weight: bold;
-
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-    position: relative;
-    left: 260px;
-    top: 20px;
-    
 
     transition: 0.3s;
 }
@@ -135,15 +129,54 @@ body {
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; 
-    align-items: center;
-    padding: 10px;
-  }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 16px;
+    }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
+    .menu-topo {
+        justify-content: center;
+    }
+
+    .menu-topo a {
+        padding: 8px 12px;
+    }
+
+    .voltar {
+        width: 92%;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .container-sobre-nos {
+        width: 92%;
+        padding: 24px 18px;
+        margin: 20px auto 30px;
+    }
+
+    .container-sobre-nos h1,
+    .container-sobre-nos h2,
+    .container-sobre-nos h3 {
+        font-size: 28px;
+        margin-bottom: 18px;
+    }
+
+    .container-sobre-nos h2,
+    .container-sobre-nos h3 {
+        margin-top: 30px;
+    }
+
+    .container-sobre-nos p {
+        font-size: 16px;
+        text-align: left; /* evita os espaços estranhos do justify */
+    }
+
+    .imagem-destaque {
+        width: 100%;
+    }
+
+    .logo-univesp img {
+        width: 200px;
+    }
 }

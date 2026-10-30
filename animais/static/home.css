@@ -134,15 +134,35 @@ line-height: 1.5;
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; 
-    align-items: center;
-    padding: 10px;
-  }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 16px;
+    }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
+    .menu-topo {
+        justify-content: center;
+    }
+
+    .menu-topo a {
+        padding: 8px 12px;
+    }
+
+    .conteudo {
+        padding: 16px;
+    }
+
+    .titulo-site {
+        letter-spacing: -1px;
+    }
+
+    .descricao-site {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .btn-animais {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
 }
