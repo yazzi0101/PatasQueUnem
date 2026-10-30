@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Página não encontrada</title>
+
+    <link rel="stylesheet" href="{% static '404.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
+
+    <nav class="navbar" aria-label="Menu principal">
+        <a href="{% url 'home' %}" class="logo">
+            PatasQueUnem
+        </a>
+
+        <div class="menu-topo">
+            <a href="{% url 'home' %}">Página Inicial</a>
+            <a href="{% url 'animais_disponiveis' %}">Animais para adoção</a>
+            <a href="{% url 'colocar_adocao' %}">Cadastrar animal</a>
+            <a href="{% url 'sobre_nos' %}">Sobre Nós</a>
+        </div>
+    </nav>
+
+    <main id="conteudo" class="mensagem-erro">
+
+        <div class="icone" aria-hidden="true">🐾</div>
+
+        <p class="codigo-erro">404</p>
+
+        <h1>Ops, essa patinha não levou a lugar nenhum</h1>
+
+        <p>
+            A página que você procura não existe ou foi movida.
+            Confira o endereço digitado ou volte para continuar sua busca por um novo amigo.
+        </p>
+
+        <div class="acoes">
+            <a href="{% url 'home' %}" class="btn-voltar">
+                Voltar para o início
+            </a>
+
+            <a href="{% url 'animais_disponiveis' %}" class="btn-secundario">
+                Ver animais disponíveis
+            </a>
+        </div>
+
+    </main>
+
+</body>
+</html>
