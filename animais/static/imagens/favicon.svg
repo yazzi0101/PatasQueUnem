@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Patas que Unem</title>
+  <path d="M32 56 C12 42 6 31 6 21 C6 13 12 8 19 8 C24 8 29 11 32 16 C35 11 40 8 45 8 C52 8 58 13 58 21 C58 31 52 42 32 56 Z"
+        fill="none" stroke="#2f9e5e" stroke-width="5" stroke-linejoin="round"/>
+  <g fill="#2f9e5e">
+    <ellipse cx="32" cy="38" rx="6.5" ry="5.5"/>
+    <ellipse cx="22.5" cy="31" rx="3" ry="4" transform="rotate(-20 22.5 31)"/>
+    <ellipse cx="28" cy="24.5" rx="3" ry="4.2" transform="rotate(-6 28 24.5)"/>
+    <ellipse cx="36" cy="24.5" rx="3" ry="4.2" transform="rotate(6 36 24.5)"/>
+    <ellipse cx="41.5" cy="31" rx="3" ry="4" transform="rotate(20 41.5 31)"/>
+  </g>
+</svg>
